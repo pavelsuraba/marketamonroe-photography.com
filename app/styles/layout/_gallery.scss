@@ -1,0 +1,41 @@
+/*==========================================================================
+  Gallery
+  ========================================================================== */
+
+.gallery__item {
+    max-width: 400px;
+    height: 100%;
+    overflow: hidden;
+
+  @include bp(47em) { //752px
+    width: 350px;
+    height: 250px;
+    float: left;
+  }
+
+
+  a {
+    display: block;
+    width: 100%;
+    height: 100%;   
+  }
+}
+
+.gallery__item__img {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+
+  @include bp(47em) { //752px
+    min-height: 100%;
+  }
+}
+
+.pin-button {
+  position: absolute;
+  top: 116px;
+
+  @include bp(53em) {
+    top: 152px;
+  }
+}

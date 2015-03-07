@@ -1,0 +1,98 @@
+/* ==========================================================================
+   Grid
+   ========================================================================== */
+
+$grid-pad: 1rem;
+
+%container {
+  margin: 0 auto;
+  padding: 0 $grid-pad 0 $grid-pad;
+}
+
+.container {
+  @extend %container;
+  max-width: 77.5em; // 1550px
+}
+
+.container--section {
+  @extend %container;
+  max-width: 40rem; // 640px
+}
+
+.container--investment {
+  @extend %container;
+  max-width: 65rem; // 1300px
+}
+
+.container--gallery {
+  @extend %container;
+  max-width: 72rem; // 1440px
+}
+
+.row {
+  margin-right: -($grid-pad/2);
+  margin-left: -($grid-pad/2);
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+%col {
+  padding: 0 ($grid-pad/2) 0 ($grid-pad/2);
+  width: 100%;  
+}
+
+.col--work {
+
+  @extend %col;
+
+  @include bp(35em) { //560px
+    float: left;
+    width: 50%;
+  }
+}
+
+.col--investment {
+
+  @extend %col;
+  margin-bottom: 1rem;
+
+  @include bp(35em) { //560px
+    float: left;
+    width: 50%;
+  }
+
+  @include bp(58em) { //560px
+    float: left;
+    width: 33%;
+  }
+}
+
+.col--footer-left {
+  @extend %col;
+  margin-bottom: 1rem;
+
+  @include bp(35em) { //560px
+    float: left;
+    width: 50%;
+    margin-bottom: 0;
+  }
+}
+
+.col--footer-right {
+  @extend %col;
+
+  @include bp(35em) { //560px
+    float: right;
+    width: auto;
+  }
+}
+
+.col--thumbnail {
+  float: left;
+  width: 50%;
+  height: 270px;
+}

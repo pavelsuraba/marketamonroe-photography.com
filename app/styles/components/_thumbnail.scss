@@ -1,0 +1,60 @@
+/*==========================================================================
+  Thumbnail
+  ==========================================================================*/
+
+.thumbnails {
+  padding-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  
+  @media only screen and (max-width: 53em) {
+    display: none;
+  }
+}
+
+.thumbnail {
+  position: relative;
+  overflow: hidden;
+  width: 380px;
+  height: 270px;
+  background: #2c3e50;
+  cursor: pointer;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+
+  &:hover {
+    .thumbnail__caption {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .thumbnail__image {
+      transform: translate3d(0,0,0);
+      opacity: 0.6;
+    }
+  }
+}
+
+.thumbnail__image {
+  width: 100%;
+  height: auto;
+  opacity: 1;
+  transition: all 700ms;
+  transform: translate3d(0,0,250px);
+}
+
+.thumbnail__caption {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  padding: 0 25px 25px 25px;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 700ms;
+  color: #f8f8f8;
+  font-size: 1.7rem;
+  line-height: 1;
+
+  p {
+    margin-bottom: 0; 
+  }
+}

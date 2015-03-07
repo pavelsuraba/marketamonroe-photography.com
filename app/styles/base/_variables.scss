@@ -1,0 +1,39 @@
+/* ==========================================================================
+   Variables
+   ========================================================================== */
+
+/* Colors */
+$pink: #ffd3d9;
+$gold: #ccad73;
+$gold--opacity: rgba(204,173,115,0.3);
+$white: #f6f6f6;
+$grey: #ededed;
+$grey--dark: #666;
+$brown: #37313A;
+
+$body-background: $grey;
+$body-text: $grey--dark;
+$header-background: $white;
+$footer-background: $brown;
+$section-background: $white;
+
+$menu-line: $gold;
+$navigation-text: $gold;
+$selection: $pink;
+
+/* Form background color */
+$form-bg-color: darken($white, 3%);
+
+/* Form focus border color */
+$form-border-color: $gold;
+
+/* Form placeholder font color */
+$form-placeholder-font-color: $grey--dark;
+
+/* Column background */
+$col-investment-background: $gold--opacity;
+
+/* Buttons */
+$btn-bg: $gold;
+$btn-bg-hover: darken($gold, 5%);
+$btn-color: $white;

@@ -1,0 +1,104 @@
+/*==========================================================================
+  Navigation
+  ==========================================================================*/
+
+.navigation--outer {
+  display: none;
+
+  @include bp(63em) { //1008px
+    display: block;
+    float: right;
+    margin-top: 12px;
+  }    
+}
+
+.navigation--outer.js-active {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 98;
+}
+
+.navigation.js-active {
+  display: table;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,0.9);
+
+  .navigation__list {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .navigation__item {
+    text-align: center;
+    padding: 10px 0;
+    font-size: 2rem;
+    font-weight: bold;
+
+    @include bp(40em) { //640px
+      font-size: 2.5rem;
+      padding: 20px 0;
+    }  
+  }
+}
+
+.navigation__item {
+  display: block;
+  font-size: 1.3rem;
+  transition: all 300ms;
+
+  @include bp(63em) { //1008px
+    display: inline-block;
+    padding-left: 40px;    
+  }
+
+  @include bp(70em) { //1120px
+    padding-left: 55px;    
+  }
+}
+
+.navigation__item__anchor {
+  color: $navigation-text;
+
+  &:hover {
+    border-bottom: 1px solid $navigation-text;
+  }
+}
+
+/* Menu button variables */
+$icon_height: 36px;
+$line_width: 40px;
+$line_height: 2px;
+
+.menu {
+  position: absolute;
+  top: 24px;
+  right: 25px;
+  display: block;
+  width: $line_width;
+  height: $icon_height;
+  outline: none;
+  z-index: 99;
+
+  @include bp(30em) { //480px
+    top: 36px;
+  }
+
+  @include bp(63em) { //1008px
+    display: none;
+  }
+}
+
+.menu__line {
+  width: $line_width;
+  height: $line_height;
+  position: relative;
+  background: $menu-line;
+  border-radius: 2px;
+  transition: all 300ms linear 200ms;
+  margin-bottom: 10px;
+}

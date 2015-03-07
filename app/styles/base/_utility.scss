@@ -1,0 +1,63 @@
+/*==========================================================================
+  Utility , helpers
+  ========================================================================== */
+
+.text--center {
+  text-align: center;
+}
+
+.text--right {
+  text-align: right;
+}
+
+.text--left {
+  text-align: left;
+}
+
+.text--hide {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.vertical--center {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.full-height {
+    height: 100%;
+}
+
+.float--right {
+  float: right;
+}
+
+.display-table {
+  display: table;
+}
+
+.table-align {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.clear:before,
+.clear:after {
+    content: " ";
+    display: table;
+}
+
+.clear:after {
+    clear: both;
+}
+
+.margin-top {
+  margin-top: 1.5rem;  
+}
+
+.margin-bottom {
+  margin-bottom: 1.5rem;  
+}
+

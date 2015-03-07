@@ -1,0 +1,60 @@
+/*==========================================================================
+  Investment
+  ========================================================================== */
+
+.price-list {
+  position: relative;
+  background: $col-investment-background;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 5px 6px -4px rgba(50,50,50,0.6);
+  width: 100%;
+
+  @include bp(35em) { //848px
+    min-height: 230px;
+  }
+
+  @include bp(53em) { //848px
+    font-size: 16px;  
+  }
+}
+
+.price-list__heading {
+  text-align: center;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+
+/* Folden corner */
+.price-list:before, .price-list:after {
+  display: block;
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  top: 0;
+  right: 0;
+  content: "";
+}
+
+.price-list:before {
+  border-top: solid 14px $white;
+  border-right: solid 14px $white;
+  border-left: solid 14px transparent;
+  border-bottom: solid 14px transparent;
+}
+
+.price-list:after {
+  border-bottom: solid 14px rgba(204,173,115,0.8);
+  border-left: solid 14px rgba(204,173,115,0.8);
+  border-right: solid 14px transparent;
+  border-top: solid 14px transparent;
+  border-radius: 0 0 0 5px;
+}
+
+.heading--investment {
+  margin-bottom: 0.5rem;
+}
+
+.paragraph--investment {
+  margin-top: 0.5rem;
+}
