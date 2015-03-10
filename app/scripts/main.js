@@ -81,7 +81,7 @@ var App = (function($) {
     /* Slideshow */
     function slideImg() {
 
-        var wideEnough = isWidthMore(848),
+        var wideEnough = isWidthMore(848);
 
         if(wideEnough) {
 
