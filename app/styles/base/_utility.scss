@@ -20,6 +20,10 @@
   overflow: hidden;
 }
 
+.text--upper {
+  text-transform: uppercase
+}
+
 .vertical--center {
   position: relative;
   top: 50%;
@@ -54,10 +58,13 @@
 }
 
 .margin-top {
-  margin-top: 1.5rem;  
+  margin-top: 1.5rem;
 }
 
 .margin-bottom {
-  margin-bottom: 1.5rem;  
+  margin-bottom: 1.5rem;
 }
 
+.margin-center {
+  margin: auto
+}

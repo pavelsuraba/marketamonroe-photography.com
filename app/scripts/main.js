@@ -44,13 +44,20 @@ var App = (function($) {
         var button    = $(".menu"),
             nav       = $(".navigation"),
             nav_outer = $(".navigation--outer");
-            
+
 
         button.on("click", function(e) {
             e.preventDefault();
             nav.toggleClass("js-active");
             nav_outer.toggleClass("js-active");
         });
+    }
+
+    function disableScrollOnNavigation() {
+        var nav = document.querySelector('.navigation');
+        nav.addEventListener('touchmove', function(e) {
+            e.preventDefault();
+        }, false);
     }
 
     function closeMobileNav() {
@@ -103,7 +110,7 @@ var App = (function($) {
                 else if( counter === slideLength) {
                     counter = 0;
                     slides.fadeIn(3000);
-                    
+
                 } else {
                     slides.eq(counter).fadeOut(3000);
                     counter++;
@@ -133,7 +140,7 @@ var App = (function($) {
 
         var input = $('.form__input'),
             label = $('.form__label');
-        
+
         input.each(function() {
 
             var that = $(this);
@@ -182,7 +189,8 @@ var App = (function($) {
         smoothScroll: smoothScroll,
         ieViewport: ieViewport,
         floatLabels: floatLabels,
-        myAjax: myAjax
+        myAjax: myAjax,
+        disableScrollOnNavigation: disableScrollOnNavigation
     };
 
 })(jQuery);
@@ -194,6 +202,7 @@ App.closeMobileNav();
 App.smoothScroll();
 App.floatLabels();
 App.myAjax();
+App.disableScrollOnNavigation();
 
 /* Hide Navigation on scroll */
 var HideNav = (function($) {
@@ -217,11 +226,11 @@ var HideNav = (function($) {
 
         function hasScrolled() {
             var st = $(this).scrollTop();
-            
+
             // Make sure they scroll more than delta
             if(Math.abs(lastScrollTop - st) <= delta)
                 return;
-            
+
             // If they scrolled down and are past the navbar, add class .nav-up.
             // This is necessary so you never see what is "behind" the navbar.
             if (st > lastScrollTop && st > navbarHeight){
@@ -233,7 +242,7 @@ var HideNav = (function($) {
                     el.removeClass('header--hide');
                 }
             }
-            
+
             lastScrollTop = st;
         }
 })(jQuery);
