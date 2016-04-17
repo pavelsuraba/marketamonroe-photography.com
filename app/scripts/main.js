@@ -190,7 +190,7 @@ var App = (function($) {
 App.ieViewport();
 App.menuHandler();
 App.closeMobileNav();
-App.slideImg();
+// App.slideImg();
 App.smoothScroll();
 App.floatLabels();
 App.myAjax();
