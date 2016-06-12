@@ -25,7 +25,7 @@
 
 %icon {
   display: block;
-  width: 100%; 
+  width: 100%;
   height: 100%;
   background-repeat:no-repeat;
   background-size: 40px;
@@ -48,7 +48,7 @@
 
 .social-icon__pinterest {
   @extend %icon;
- 
+
   background-image:url('../images/logo/icons.svg');
   background-position: 0 -80px;
 }
