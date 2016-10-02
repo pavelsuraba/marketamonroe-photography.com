@@ -15,6 +15,17 @@ gulp.task('styles', function () {
     .pipe(gulp.dest('.tmp/styles'));
 });
 
+gulp.task('styles-prod', function () {
+  return gulp.src('app/styles/main.scss')
+    .pipe($.plumber())
+    .pipe($.rubySass({
+      style: 'compressed',
+      precision: 10
+    }))
+    .pipe($.autoprefixer({browsers: ['last 2 version', 'ie 9']}))
+    .pipe(gulp.dest('dist/styles'));
+});
+
 gulp.task('jshint', function () {
   return gulp.src('app/scripts/**/*.js')
     .pipe($.jshint())
@@ -22,13 +33,12 @@ gulp.task('jshint', function () {
     // .pipe($.jshint.reporter('fail'));
 });
 
-gulp.task('html', ['styles'], function () {
+gulp.task('html', function () {
   var assets = $.useref.assets({searchPath: '{.tmp,app}'});
 
   return gulp.src('app/*.html')
     .pipe(assets)
     .pipe($.if('*.js', $.uglify()))
-    .pipe($.if('*.css', $.csso()))
     .pipe(assets.restore())
     .pipe($.useref())
     // .pipe($.if('*.html', $.minifyHtml({conditionals: true, loose: true})))
@@ -114,7 +124,7 @@ gulp.task('watch', ['connect'], function () {
   gulp.watch('bower.json', ['wiredep']);
 });
 
-gulp.task('build', ['jshint', 'html', 'images', 'fonts', 'extras'], function () {
+gulp.task('build', ['jshint', 'html', 'images', 'fonts', 'extras', 'styles-prod'], function () {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 

@@ -2,6 +2,12 @@
   Gallery
   ========================================================================== */
 
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .gallery__item {
     max-width: 400px;
     height: 100%;
@@ -17,7 +23,7 @@
   a {
     display: block;
     width: 100%;
-    height: 100%;   
+    height: 100%;
   }
 }
 
@@ -25,7 +31,6 @@
   width: 100%;
   height: auto;
   overflow: hidden;
-
   @include bp(47em) { //752px
     min-height: 100%;
   }
@@ -37,5 +42,13 @@
 
   @include bp(53em) {
     top: 152px;
+  }
+}
+
+@supports (object-fit: cover) {
+  .gallery__item__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
