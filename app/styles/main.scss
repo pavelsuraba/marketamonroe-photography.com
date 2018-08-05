@@ -4,40 +4,40 @@
 
 /**
     Author: Pavel Šuraba
- 
+
     Year: 2015
-  
+
     Description: Responsive , mobile first , OOCSS
- 
-    Fonts: 
-   
+
+    Fonts:
+
     Tools: Sass , Gulp , Bower , Picturefill
 
     Support: IE9+
-   
+
  */
 
 /* Base imports */
-@import "base/variables";
-@import "base/mixins";
-@import "base/base";
-@import "base/typography";
-@import "base/grid";
+@import 'base/variables';
+@import 'base/mixins';
+@import 'base/base';
+@import 'base/typography';
+@import 'base/grid';
 
 /* Components imports */
-@import "components/nav";
-@import "components/hero";
-@import "components/buttons";
-@import "components/form";
-@import "components/social-icons";
-@import "components/thumbnail";
+@import 'components/nav';
+@import 'components/hero';
+@import 'components/buttons';
+@import 'components/form';
+@import 'components/social-icons';
+@import 'components/thumbnail';
 
 /* Layout imports */
-@import "layout/header";
-@import "layout/section";
-@import "layout/investment";
-@import "layout/footer";
-@import "layout/wardrobe";
-@import "layout/gallery";
+@import 'layout/header';
+@import 'layout/section';
+@import 'layout/investment';
+@import 'layout/footer';
+@import 'layout/wardrobe';
+@import 'layout/gallery';
 
-@import "base/utility";
+@import 'base/utility';

@@ -1,227 +1,327 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Gallery</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+  <meta charset="UTF-8">
+  <title>Gallery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
 
-    <link rel="icon" type="image/png" href="/favicon.png" sizes="32x32">
-    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="/favicon.png" sizes="32x32">
+  <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon.png">
 
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/lightbox.css">
-
-    <script>
-        function loadCSS( href, before, media ){
-            "use strict";
-            var ss = window.document.createElement( "link" );
-            var ref = before || window.document.getElementsByTagName( "script" )[ 0 ];
-            ss.rel = "stylesheet";
-            ss.href = href;
-            ss.media = "only x";
-            ref.parentNode.insertBefore( ss, ref );
-            setTimeout( function(){
-                ss.media = media || "all";
-            } );
-            return ss;
-         }
-        loadCSS( "styles/font.css" );
-
-        document.createElement( "picture" );
-    </script>
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/lightbox.css">
 
 </head>
+
 <body>
-    <div class="section">
-        <div class="container--gallery">
-            <h1>Gallery</h1>
+  <div class="section">
+    <div class="container--gallery">
+      <h1>Gallery</h1>
 
-            <div class="text--center margin-bottom">
-                <a href="/index.html#thumbnails" class="btn">Back Home</a>
-            </div>
+      <div class="text--center margin-bottom">
+        <a href="/index.html#thumbnails" class="btn">Back Home</a>
+      </div>
 
-            <div class="pin-button">
-                <a href="//www.pinterest.com/pin/create/button/" data-pin-do="buttonPin" data-pin-config="beside" data-pin-color="red" data-pin-height="28"><img src='//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_red_28.png' alt='Pin it' /></a>  
-            </div>
+      <div class="pin-button">
+        <a href="//www.pinterest.com/pin/create/button/" data-pin-do="buttonPin" data-pin-config="beside" data-pin-color="red" data-pin-height="28">
+          <img src='//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_red_28.png' alt='Pin it' />
+        </a>
+      </div>
 
-            <ul class="gallery clear">
-                <li class="gallery__item">
-                    <a href="images/gallery/img01-1024.jpg" data-lightbox="img"><img src="images/gallery/img01-350.jpg" alt="" class="gallery__item__img"></a>
-                </li>
-                <li class="gallery__item">
-                    <a href="images/gallery/img02-1024.jpg" data-lightbox="img"><img src="images/gallery/img02-350.jpg" alt="" class="gallery__item__img"></a>
-                </li>
-                <li class="gallery__item">
-                    <a href="images/gallery/img03-1024.jpg" data-lightbox="img"><img src="images/gallery/img03-350.jpg" alt="" class="gallery__item__img"></a>
-                </li>                
-                <li class="gallery__item">
-                    <a href="images/gallery/img04-1024.jpg" data-lightbox="img"><img src="images/gallery/img04-350.jpg" alt="" class="gallery__item__img"></a>
-                </li>
-                <li class="gallery__item">
-                    <a href="images/gallery/img05-1024.jpg" data-lightbox="img"><img src="images/gallery/img05-350.jpg" alt="" class="gallery__item__img"></a>
-                </li>
-                <li class="gallery__item">
-                    <a href="images/gallery/img06-1024.jpg" data-lightbox="img"><img src="images/gallery/img06-350.jpg" alt="" class="gallery__item__img"></a>
-                </li>
-                <li class="gallery__item">
-                    <a href="images/gallery/img07-1024.jpg" data-lightbox="img"><img src="images/gallery/img07-350.jpg" alt="" class="gallery__item__img"></a>
-                </li>
-                <li class="gallery__item">
-                    <a href="images/gallery/img08-1024.jpg" data-lightbox="img"><img src="images/gallery/img08-350.jpg" alt="" class="gallery__item__img"></a>
-                </li>
-                <li class="gallery__item">
-                    <a href="images/gallery/img09-1024.jpg" data-lightbox="img"><img src="images/gallery/img09-350.jpg" alt="" class="gallery__item__img"></a>
-                </li>                
-                <li class="gallery__item">
-                    <a href="images/gallery/img10-1024.jpg" data-lightbox="img"><img src="images/gallery/img10-350.jpg" alt="" class="gallery__item__img"></a>
-                </li>
-                <li class="gallery__item">
-                    <a href="images/gallery/img11-1024.jpg" data-lightbox="img"><img src="images/gallery/img11-350.jpg" alt="" class="gallery__item__img"></a>
-                </li>
-                <li class="gallery__item">
-                    <a href="images/gallery/img12-1024.jpg" data-lightbox="img"><img src="images/gallery/img12-350.jpg" alt="" class="gallery__item__img"></a>
-                </li>
-                <li class="gallery__item">
-                    <a href="images/gallery/img13-1024.jpg" data-lightbox="img"><img src="images/gallery/img13-350.jpg" alt="" class="gallery__item__img"></a>
-                </li>                
-                <li class="gallery__item">
-                    <a href="images/gallery/img14-1024.jpg" data-lightbox="img"><img src="images/gallery/img14-350.jpg" alt="" class="gallery__item__img"></a>
-                </li>
-                <li class="gallery__item">
-                    <a href="images/gallery/img15-1024.jpg" data-lightbox="img"><img src="images/gallery/img15-350.jpg" alt="" class="gallery__item__img"></a>
-                </li>
-                <li class="gallery__item">
-                    <a href="images/gallery/img16-1024.jpg" data-lightbox="img"><img src="images/gallery/img16-350.jpg" alt="" class="gallery__item__img"></a>
-                </li>
-                <li class="gallery__item">
-                    <a href="images/gallery/img17-1024.jpg" data-lightbox="img"><img src="images/gallery/img17-350.jpg" alt="" class="gallery__item__img"></a>
-                </li>
-                <li class="gallery__item">
-                    <a href="images/gallery/img18-1024.jpg" data-lightbox="img"><img src="images/gallery/img18-350.jpg" alt="" class="gallery__item__img"></a>
-                </li>
-                <li class="gallery__item">
-                    <a href="images/gallery/img19-1024.jpg" data-lightbox="img"><img src="images/gallery/img19-350.jpg" alt="" class="gallery__item__img"></a>
-                </li>
-                <li class="gallery__item">
-                    <a href="images/gallery/img20-1024.jpg" data-lightbox="img"><img src="images/gallery/img20-350.jpg" alt="" class="gallery__item__img"></a>
-                </li>                
-                <li class="gallery__item">
-                    <a href="images/gallery/img21-1024.jpg" data-lightbox="img"><img src="images/gallery/img21-350.jpg" alt="" class="gallery__item__img"></a>
-                </li>
-                <li class="gallery__item">
-                    <a href="images/gallery/img22-1024.jpg" data-lightbox="img"><img src="images/gallery/img22-350.jpg" alt="" class="gallery__item__img"></a>
-                </li>
-                <li class="gallery__item">
-                    <a href="images/gallery/img23-1024.jpg" data-lightbox="img"><img src="images/gallery/img23-350.jpg" alt="" class="gallery__item__img"></a>
-                </li>
-                <li class="gallery__item">
-                    <a href="images/gallery/img24-1024.jpg" data-lightbox="img"><img src="images/gallery/img24-350.jpg" alt="" class="gallery__item__img"></a>
-                </li>
-                <li class="gallery__item">
-                    <a href="images/gallery/img25-1024.jpg" data-lightbox="img"><img src="images/gallery/img25-350.jpg" alt="" class="gallery__item__img"></a>
-                </li>
-                <li class="gallery__item">
-                    <a href="images/gallery/img26-1024.jpg" data-lightbox="img"><img src="images/gallery/img26-350.jpg" alt="" class="gallery__item__img"></a>
-                </li>                
-                <li class="gallery__item">
-                    <a href="images/gallery/img27-1024.jpg" data-lightbox="img"><img src="images/gallery/img27-350.jpg" alt="" class="gallery__item__img"></a>
-                </li>
-                <li class="gallery__item">
-                    <a href="images/gallery/img28-1024.jpg" data-lightbox="img"><img src="images/gallery/img28-350.jpg" alt="" class="gallery__item__img"></a>
-                </li>
-                <li class="gallery__item">
-                    <a href="images/gallery/img29-1024.jpg" data-lightbox="img"><img src="images/gallery/img29-350.jpg" alt="" class="gallery__item__img"></a>
-                </li>
-                <li class="gallery__item">
-                    <a href="images/gallery/img30-1024.jpg" data-lightbox="img"><img src="images/gallery/img30-350.jpg" alt="" class="gallery__item__img"></a>
-                </li>                
-                <li class="gallery__item">
-                    <a href="images/gallery/img31-1024.jpg" data-lightbox="img"><img src="images/gallery/img31-350.jpg" alt="" class="gallery__item__img"></a>
-                </li>
-                <li class="gallery__item">
-                    <a href="images/gallery/img32-1024.jpg" data-lightbox="img"><img src="images/gallery/img32-350.jpg" alt="" class="gallery__item__img"></a>
-                </li>
-                <li class="gallery__item">
-                    <a href="images/gallery/img33-1024.jpg" data-lightbox="img"><img src="images/gallery/img33-350.jpg" alt="" class="gallery__item__img"></a>
-                </li>
-                <li class="gallery__item">
-                    <a href="images/gallery/img34-1024.jpg" data-lightbox="img"><img src="images/gallery/img34-350.jpg" alt="" class="gallery__item__img"></a>
-                </li>
-                <li class="gallery__item">
-                    <a href="images/gallery/img35-1024.jpg" data-lightbox="img"><img src="images/gallery/img35-350.jpg" alt="" class="gallery__item__img"></a>
-                </li>
-                <li class="gallery__item">
-                    <a href="images/gallery/img36-1024.jpg" data-lightbox="img"><img src="images/gallery/img36-350.jpg" alt="" class="gallery__item__img"></a>
-                </li>
-                <li class="gallery__item">
-                    <a href="images/gallery/img37-1024.jpg" data-lightbox="img"><img src="images/gallery/img37-350.jpg" alt="" class="gallery__item__img"></a>
-                </li>                
-                <li class="gallery__item">
-                    <a href="images/gallery/img38-1024.jpg" data-lightbox="img"><img src="images/gallery/img38-350.jpg" alt="" class="gallery__item__img"></a>
-                </li>
-                <li class="gallery__item">
-                    <a href="images/gallery/img39-1024.jpg" data-lightbox="img"><img src="images/gallery/img39-350.jpg" alt="" class="gallery__item__img"></a>
-                </li>
-                <li class="gallery__item">
-                    <a href="images/gallery/img40-1024.jpg" data-lightbox="img"><img src="images/gallery/img40-350.jpg" alt="" class="gallery__item__img"></a>
-                </li>
-                <li class="gallery__item">
-                    <a href="images/gallery/img41-1024.jpg" data-lightbox="img"><img src="images/gallery/img41-350.jpg" alt="" class="gallery__item__img"></a>
-                </li>
-                <li class="gallery__item">
-                    <a href="images/gallery/img42-1024.jpg" data-lightbox="img"><img src="images/gallery/img42-350.jpg" alt="" class="gallery__item__img"></a>
-                </li>
-                <li class="gallery__item">
-                    <a href="images/gallery/img43-1024.jpg" data-lightbox="img"><img src="images/gallery/img43-350.jpg" alt="" class="gallery__item__img"></a>
-                </li>                
-                <li class="gallery__item">
-                    <a href="images/gallery/img44-1024.jpg" data-lightbox="img"><img src="images/gallery/img44-350.jpg" alt="" class="gallery__item__img"></a>
-                </li>
-                <li class="gallery__item">
-                    <a href="images/gallery/img45-1024.jpg" data-lightbox="img"><img src="images/gallery/img45-350.jpg" alt="" class="gallery__item__img"></a>
-                </li>
-                <li class="gallery__item">
-                    <a href="images/gallery/img46-1024.jpg" data-lightbox="img"><img src="images/gallery/img46-350.jpg" alt="" class="gallery__item__img"></a>
-                </li>
-                <li class="gallery__item">
-                    <a href="images/gallery/img47-1024.jpg" data-lightbox="img"><img src="images/gallery/img47-350.jpg" alt="" class="gallery__item__img"></a>
-                </li>                
-                <li class="gallery__item">
-                    <a href="images/gallery/img48-1024.jpg" data-lightbox="img"><img src="images/gallery/img48-350.jpg" alt="" class="gallery__item__img"></a>
-                </li>
-                <li class="gallery__item">
-                    <a href="images/gallery/img49-1024.jpg" data-lightbox="img"><img src="images/gallery/img49-350.jpg" alt="" class="gallery__item__img"></a>
-                </li>
-                <li class="gallery__item">
-                    <a href="images/gallery/img50-1024.jpg" data-lightbox="img"><img src="images/gallery/img50-350.jpg" alt="" class="gallery__item__img"></a>
-                </li>
-                <li class="gallery__item">
-                    <a href="images/gallery/img51-1024.jpg" data-lightbox="img"><img src="images/gallery/img51-350.jpg" alt="" class="gallery__item__img"></a>
-                </li>
-                <li class="gallery__item">
-                    <a href="images/gallery/img52-1024.jpg" data-lightbox="img"><img src="images/gallery/img52-350.jpg" alt="" class="gallery__item__img"></a>
-                </li>
-                <li class="gallery__item">
-                    <a href="images/gallery/img53-1024.jpg" data-lightbox="img"><img src="images/gallery/img53-350.jpg" alt="" class="gallery__item__img"></a>
-                </li>
-                <li class="gallery__item">
-                    <a href="images/gallery/img54-1024.jpg" data-lightbox="img"><img src="images/gallery/img54-350.jpg" alt="" class="gallery__item__img"></a>
-                </li>                
-                <li class="gallery__item">
-                    <a href="images/gallery/img55-1024.jpg" data-lightbox="img"><img src="images/gallery/img55-350.jpg" alt="" class="gallery__item__img"></a>
-                </li>
-                <li class="gallery__item">
-                    <a href="images/gallery/img56-1024.jpg" data-lightbox="img"><img src="images/gallery/img56-350.jpg" alt="" class="gallery__item__img"></a>
-                </li>
-            </ul>
-        </div><!-- /container -->
-    </div><!-- /section -->
+      <ul class="gallery clear">
+        <li class="gallery__item">
+          <a href="images/gallery/img01-1024.jpg" data-lightbox="img">
+            <img src="images/gallery/img01-350.jpg" alt="" class="gallery__item__img">
+          </a>
+        </li>
+        <li class="gallery__item">
+          <a href="images/gallery/img02-1024.jpg" data-lightbox="img">
+            <img src="images/gallery/img02-350.jpg" alt="" class="gallery__item__img">
+          </a>
+        </li>
+        <li class="gallery__item">
+          <a href="images/gallery/img03-1024.jpg" data-lightbox="img">
+            <img src="images/gallery/img03-350.jpg" alt="" class="gallery__item__img">
+          </a>
+        </li>
+        <li class="gallery__item">
+          <a href="images/gallery/img04-1024.jpg" data-lightbox="img">
+            <img src="images/gallery/img04-350.jpg" alt="" class="gallery__item__img">
+          </a>
+        </li>
+        <li class="gallery__item">
+          <a href="images/gallery/img05-1024.jpg" data-lightbox="img">
+            <img src="images/gallery/img05-350.jpg" alt="" class="gallery__item__img">
+          </a>
+        </li>
+        <li class="gallery__item">
+          <a href="images/gallery/img06-1024.jpg" data-lightbox="img">
+            <img src="images/gallery/img06-350.jpg" alt="" class="gallery__item__img">
+          </a>
+        </li>
+        <li class="gallery__item">
+          <a href="images/gallery/img07-1024.jpg" data-lightbox="img">
+            <img src="images/gallery/img07-350.jpg" alt="" class="gallery__item__img">
+          </a>
+        </li>
+        <li class="gallery__item">
+          <a href="images/gallery/img08-1024.jpg" data-lightbox="img">
+            <img src="images/gallery/img08-350.jpg" alt="" class="gallery__item__img">
+          </a>
+        </li>
+        <li class="gallery__item">
+          <a href="images/gallery/img09-1024.jpg" data-lightbox="img">
+            <img src="images/gallery/img09-350.jpg" alt="" class="gallery__item__img">
+          </a>
+        </li>
+        <li class="gallery__item">
+          <a href="images/gallery/img10-1024.jpg" data-lightbox="img">
+            <img src="images/gallery/img10-350.jpg" alt="" class="gallery__item__img">
+          </a>
+        </li>
+        <li class="gallery__item">
+          <a href="images/gallery/img11-1024.jpg" data-lightbox="img">
+            <img src="images/gallery/img11-350.jpg" alt="" class="gallery__item__img">
+          </a>
+        </li>
+        <li class="gallery__item">
+          <a href="images/gallery/img12-1024.jpg" data-lightbox="img">
+            <img src="images/gallery/img12-350.jpg" alt="" class="gallery__item__img">
+          </a>
+        </li>
+        <li class="gallery__item">
+          <a href="images/gallery/img13-1024.jpg" data-lightbox="img">
+            <img src="images/gallery/img13-350.jpg" alt="" class="gallery__item__img">
+          </a>
+        </li>
+        <li class="gallery__item">
+          <a href="images/gallery/img14-1024.jpg" data-lightbox="img">
+            <img src="images/gallery/img14-350.jpg" alt="" class="gallery__item__img">
+          </a>
+        </li>
+        <li class="gallery__item">
+          <a href="images/gallery/img15-1024.jpg" data-lightbox="img">
+            <img src="images/gallery/img15-350.jpg" alt="" class="gallery__item__img">
+          </a>
+        </li>
+        <li class="gallery__item">
+          <a href="images/gallery/img16-1024.jpg" data-lightbox="img">
+            <img src="images/gallery/img16-350.jpg" alt="" class="gallery__item__img">
+          </a>
+        </li>
+        <li class="gallery__item">
+          <a href="images/gallery/img17-1024.jpg" data-lightbox="img">
+            <img src="images/gallery/img17-350.jpg" alt="" class="gallery__item__img">
+          </a>
+        </li>
+        <li class="gallery__item">
+          <a href="images/gallery/img18-1024.jpg" data-lightbox="img">
+            <img src="images/gallery/img18-350.jpg" alt="" class="gallery__item__img">
+          </a>
+        </li>
+        <li class="gallery__item">
+          <a href="images/gallery/img19-1024.jpg" data-lightbox="img">
+            <img src="images/gallery/img19-350.jpg" alt="" class="gallery__item__img">
+          </a>
+        </li>
+        <li class="gallery__item">
+          <a href="images/gallery/img20-1024.jpg" data-lightbox="img">
+            <img src="images/gallery/img20-350.jpg" alt="" class="gallery__item__img">
+          </a>
+        </li>
+        <li class="gallery__item">
+          <a href="images/gallery/img21-1024.jpg" data-lightbox="img">
+            <img src="images/gallery/img21-350.jpg" alt="" class="gallery__item__img">
+          </a>
+        </li>
+        <li class="gallery__item">
+          <a href="images/gallery/img22-1024.jpg" data-lightbox="img">
+            <img src="images/gallery/img22-350.jpg" alt="" class="gallery__item__img">
+          </a>
+        </li>
+        <li class="gallery__item">
+          <a href="images/gallery/img23-1024.jpg" data-lightbox="img">
+            <img src="images/gallery/img23-350.jpg" alt="" class="gallery__item__img">
+          </a>
+        </li>
+        <li class="gallery__item">
+          <a href="images/gallery/img24-1024.jpg" data-lightbox="img">
+            <img src="images/gallery/img24-350.jpg" alt="" class="gallery__item__img">
+          </a>
+        </li>
+        <li class="gallery__item">
+          <a href="images/gallery/img25-1024.jpg" data-lightbox="img">
+            <img src="images/gallery/img25-350.jpg" alt="" class="gallery__item__img">
+          </a>
+        </li>
+        <li class="gallery__item">
+          <a href="images/gallery/img26-1024.jpg" data-lightbox="img">
+            <img src="images/gallery/img26-350.jpg" alt="" class="gallery__item__img">
+          </a>
+        </li>
+        <li class="gallery__item">
+          <a href="images/gallery/img27-1024.jpg" data-lightbox="img">
+            <img src="images/gallery/img27-350.jpg" alt="" class="gallery__item__img">
+          </a>
+        </li>
+        <li class="gallery__item">
+          <a href="images/gallery/img28-1024.jpg" data-lightbox="img">
+            <img src="images/gallery/img28-350.jpg" alt="" class="gallery__item__img">
+          </a>
+        </li>
+        <li class="gallery__item">
+          <a href="images/gallery/img29-1024.jpg" data-lightbox="img">
+            <img src="images/gallery/img29-350.jpg" alt="" class="gallery__item__img">
+          </a>
+        </li>
+        <li class="gallery__item">
+          <a href="images/gallery/img30-1024.jpg" data-lightbox="img">
+            <img src="images/gallery/img30-350.jpg" alt="" class="gallery__item__img">
+          </a>
+        </li>
+        <li class="gallery__item">
+          <a href="images/gallery/img31-1024.jpg" data-lightbox="img">
+            <img src="images/gallery/img31-350.jpg" alt="" class="gallery__item__img">
+          </a>
+        </li>
+        <li class="gallery__item">
+          <a href="images/gallery/img32-1024.jpg" data-lightbox="img">
+            <img src="images/gallery/img32-350.jpg" alt="" class="gallery__item__img">
+          </a>
+        </li>
+        <li class="gallery__item">
+          <a href="images/gallery/img33-1024.jpg" data-lightbox="img">
+            <img src="images/gallery/img33-350.jpg" alt="" class="gallery__item__img">
+          </a>
+        </li>
+        <li class="gallery__item">
+          <a href="images/gallery/img34-1024.jpg" data-lightbox="img">
+            <img src="images/gallery/img34-350.jpg" alt="" class="gallery__item__img">
+          </a>
+        </li>
+        <li class="gallery__item">
+          <a href="images/gallery/img35-1024.jpg" data-lightbox="img">
+            <img src="images/gallery/img35-350.jpg" alt="" class="gallery__item__img">
+          </a>
+        </li>
+        <li class="gallery__item">
+          <a href="images/gallery/img36-1024.jpg" data-lightbox="img">
+            <img src="images/gallery/img36-350.jpg" alt="" class="gallery__item__img">
+          </a>
+        </li>
+        <li class="gallery__item">
+          <a href="images/gallery/img37-1024.jpg" data-lightbox="img">
+            <img src="images/gallery/img37-350.jpg" alt="" class="gallery__item__img">
+          </a>
+        </li>
+        <li class="gallery__item">
+          <a href="images/gallery/img38-1024.jpg" data-lightbox="img">
+            <img src="images/gallery/img38-350.jpg" alt="" class="gallery__item__img">
+          </a>
+        </li>
+        <li class="gallery__item">
+          <a href="images/gallery/img39-1024.jpg" data-lightbox="img">
+            <img src="images/gallery/img39-350.jpg" alt="" class="gallery__item__img">
+          </a>
+        </li>
+        <li class="gallery__item">
+          <a href="images/gallery/img40-1024.jpg" data-lightbox="img">
+            <img src="images/gallery/img40-350.jpg" alt="" class="gallery__item__img">
+          </a>
+        </li>
+        <li class="gallery__item">
+          <a href="images/gallery/img41-1024.jpg" data-lightbox="img">
+            <img src="images/gallery/img41-350.jpg" alt="" class="gallery__item__img">
+          </a>
+        </li>
+        <li class="gallery__item">
+          <a href="images/gallery/img42-1024.jpg" data-lightbox="img">
+            <img src="images/gallery/img42-350.jpg" alt="" class="gallery__item__img">
+          </a>
+        </li>
+        <li class="gallery__item">
+          <a href="images/gallery/img43-1024.jpg" data-lightbox="img">
+            <img src="images/gallery/img43-350.jpg" alt="" class="gallery__item__img">
+          </a>
+        </li>
+        <li class="gallery__item">
+          <a href="images/gallery/img44-1024.jpg" data-lightbox="img">
+            <img src="images/gallery/img44-350.jpg" alt="" class="gallery__item__img">
+          </a>
+        </li>
+        <li class="gallery__item">
+          <a href="images/gallery/img45-1024.jpg" data-lightbox="img">
+            <img src="images/gallery/img45-350.jpg" alt="" class="gallery__item__img">
+          </a>
+        </li>
+        <li class="gallery__item">
+          <a href="images/gallery/img46-1024.jpg" data-lightbox="img">
+            <img src="images/gallery/img46-350.jpg" alt="" class="gallery__item__img">
+          </a>
+        </li>
+        <li class="gallery__item">
+          <a href="images/gallery/img47-1024.jpg" data-lightbox="img">
+            <img src="images/gallery/img47-350.jpg" alt="" class="gallery__item__img">
+          </a>
+        </li>
+        <li class="gallery__item">
+          <a href="images/gallery/img48-1024.jpg" data-lightbox="img">
+            <img src="images/gallery/img48-350.jpg" alt="" class="gallery__item__img">
+          </a>
+        </li>
+        <li class="gallery__item">
+          <a href="images/gallery/img49-1024.jpg" data-lightbox="img">
+            <img src="images/gallery/img49-350.jpg" alt="" class="gallery__item__img">
+          </a>
+        </li>
+        <li class="gallery__item">
+          <a href="images/gallery/img50-1024.jpg" data-lightbox="img">
+            <img src="images/gallery/img50-350.jpg" alt="" class="gallery__item__img">
+          </a>
+        </li>
+        <li class="gallery__item">
+          <a href="images/gallery/img51-1024.jpg" data-lightbox="img">
+            <img src="images/gallery/img51-350.jpg" alt="" class="gallery__item__img">
+          </a>
+        </li>
+        <li class="gallery__item">
+          <a href="images/gallery/img52-1024.jpg" data-lightbox="img">
+            <img src="images/gallery/img52-350.jpg" alt="" class="gallery__item__img">
+          </a>
+        </li>
+        <li class="gallery__item">
+          <a href="images/gallery/img53-1024.jpg" data-lightbox="img">
+            <img src="images/gallery/img53-350.jpg" alt="" class="gallery__item__img">
+          </a>
+        </li>
+        <li class="gallery__item">
+          <a href="images/gallery/img54-1024.jpg" data-lightbox="img">
+            <img src="images/gallery/img54-350.jpg" alt="" class="gallery__item__img">
+          </a>
+        </li>
+        <li class="gallery__item">
+          <a href="images/gallery/img55-1024.jpg" data-lightbox="img">
+            <img src="images/gallery/img55-350.jpg" alt="" class="gallery__item__img">
+          </a>
+        </li>
+        <li class="gallery__item">
+          <a href="images/gallery/img56-1024.jpg" data-lightbox="img">
+            <img src="images/gallery/img56-350.jpg" alt="" class="gallery__item__img">
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!-- /container -->
+  </div>
+  <!-- /section -->
 
+  <script src="scripts/lightbox.min.js"></script>
+  <script type="text/javascript" async defer src="//assets.pinterest.com/js/pinit.js"></script>
 
-<script src="scripts/vendor.js"></script>
+  <script src="scripts/vendor.js"></script>
 
-<script src="scripts/lightbox.min.js"></script>
-<script type="text/javascript" async defer src="//assets.pinterest.com/js/pinit.js"></script>
-
+  <script src="scripts/main.js"></script>
 </body>
+
 </html>

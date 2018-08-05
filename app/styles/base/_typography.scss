@@ -3,7 +3,7 @@
    ========================================================================== */
 
 /*
-Modular Scale: golden ratio => 1:1.618 
+Modular Scale: golden ratio => 1:1.618
 
 
   html: 87.5%     1em     = 14px
@@ -37,7 +37,7 @@ Modular Scale: golden ratio => 1:1.618
 
           h3       1.25em = 20px
           line-height     = 2.4
-          vertical rhythm = 48px         
+          vertical rhythm = 48px
 
 
   html: 125%      1em     = 20px
@@ -54,10 +54,23 @@ Modular Scale: golden ratio => 1:1.618
 
           h3        1.2em = 24px
           line-height     = 2.5
-          vertical rhythm = 60px                      
+          vertical rhythm = 60px
 */
 
-h1, h2, h3 {
+@font-face {
+  font-family: 'Source sans';
+  src: url('../fonts/source-sans/SourceSansPro-Light.eot');
+  src: url('../fonts/source-sans/SourceSansPro-Light.eot?#iefix')
+      format('embedded-opentype'),
+    url('../fonts/source-sans/SourceSansPro-Light.woff2') format('woff2'),
+    url('../fonts/source-sans/SourceSansPro-Light.woff') format('woff'),
+    url('../fonts/source-sans/SourceSansPro-Light.ttf') format('truetype'),
+    url('../fonts/source-sans/SourceSansPro-Light.svg#webfont') format('svg');
+}
+
+h1,
+h2,
+h3 {
   font-weight: bold;
 }
 
@@ -65,12 +78,14 @@ h1 {
   font-size: 2.642rem;
   line-height: 1.136;
 
-  @include bp(29em) { //800px
+  @include bp(29em) {
+    //800px
     font-size: 2.625rem;
     line-height: 1.143;
   }
 
-  @include bp(53em) { //1040px
+  @include bp(53em) {
+    //1040px
     font-size: 2.6rem;
     line-height: 1.154;
   }
@@ -80,12 +95,14 @@ h2 {
   font-size: 1.642rem;
   line-height: 1.827;
 
-  @include bp(29em) { //800px
+  @include bp(29em) {
+    //800px
     font-size: 1.618rem;
     line-height: 1.847;
   }
 
-  @include bp(53em) { //1040px
+  @include bp(53em) {
+    //1040px
     font-size: 1.6rem;
     line-height: 1.875;
   }
@@ -95,34 +112,38 @@ h3 {
   font-size: 1.285rem;
   line-height: 2.333;
 
-  @include bp(29em) { //800px
+  @include bp(29em) {
+    //800px
     font-size: 1.285rem;
     line-height: 2.333;
   }
 
-  @include bp(53em) { //1040px
+  @include bp(53em) {
+    //1040px
     font-size: 1.1rem;
     line-height: 2.72;
   }
 }
 
 p {
-    margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 /* Put this class on body element to see vertical rhythm */
 .vertical-rhythm {
   background-image: linear-gradient(#e2e2e2 1px, transparent 1px);
-  background-size: 100% 1.500em;
+  background-size: 100% 1.5em;
   &:before {
-    content: "vertical rhythm 21px";
+    content: 'vertical rhythm 21px';
 
-    @include bp(29em) { //800px
-      content: "vertical rhythm 24px";
+    @include bp(29em) {
+      //800px
+      content: 'vertical rhythm 24px';
     }
 
-    @include bp(53em) { //1040px
-      content: "vertical rhythm 30px";
+    @include bp(53em) {
+      //1040px
+      content: 'vertical rhythm 30px';
     }
   }
 }

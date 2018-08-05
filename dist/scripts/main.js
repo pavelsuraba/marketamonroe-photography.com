@@ -1,1 +1,241 @@
-var App=function(e){"use strict";function t(e){return window.innerWidth<e}function n(e){return window.innerWidth>e}function a(){if(navigator.userAgent.match(/IEMobile\/10\.0/)){var e=document.createElement("style");e.appendChild(document.createTextNode("@-ms-viewport{width:auto!important}")),document.getElementsByTagName("head")[0].appendChild(e)}}function o(){var t=e(".menu"),n=e(".navigation"),a=e(".navigation--outer");t.on("click",function(e){e.preventDefault(),n.toggleClass("js-active"),a.toggleClass("js-active")})}function i(){var e=document.querySelector(".navigation");e.addEventListener("touchmove",function(e){e.preventDefault()},!1)}function l(){var n=e(".navigation__item__anchor"),a=e(".navigation"),o=e(".navigation--outer"),i=t(991);i?n.on("click.menu",function(e){e.preventDefault(),a.toggleClass("js-active"),o.toggleClass("js-active"),a.hasClass("js-active")&&o.hasClass("js-active")&&(a.removeClass("js-active"),o.removeClass("js-active"))}):n.unbind("click.menu")}function r(){var t=n(848);if(t){for(var a,o=0,i=e(".hero__img"),l=i.length-1,r=0,a=10;r<i.length;r++,a--)e(i[r]).css("z-index",a);window.setInterval(function(){0===o?(i.eq(o).fadeOut(3e3),o++):o===l?(o=0,i.fadeIn(3e3)):(i.eq(o).fadeOut(3e3),o++)},6e3)}}function c(){e("a[href*=#]:not([href=#])").click(function(){if(location.pathname.replace(/^\//,"")===this.pathname.replace(/^\//,"")&&location.hostname===this.hostname){var t=e(this.hash);if(t=t.length?t:e("[name="+this.hash.slice(1)+"]"),t.length)return e("html,body").animate({scrollTop:t.offset().top},750),!1}})}function s(){var t=e(".form__input");e(".form__label");t.each(function(){var t=e(this);t.keyup(function(){t.prev().addClass("typing"),0===t.val().length&&t.prev().removeClass("typing")})})}function u(){var t=e(".ajax-anchor");t.on("click",function(t){t.preventDefault();var n=e(this).attr("href"),a=e(".content");e.ajax({url:n+"?rel=tab",success:function(t){a.hide();var n=e(t),o=n.filter(".content").html();a.html(o).fadeIn(400)}}),n!=window.location&&window.history.pushState({path:n},"",n)})}return{menuHandler:o,closeMobileNav:l,slideImg:r,smoothScroll:c,ieViewport:a,floatLabels:s,myAjax:u,disableScrollOnNavigation:i}}(jQuery);App.ieViewport(),App.menuHandler(),App.closeMobileNav(),App.smoothScroll(),App.floatLabels(),App.myAjax(),App.disableScrollOnNavigation();var HideNav=function(e){function t(){var t=e(this).scrollTop();Math.abs(lastScrollTop-t)<=delta||(t>lastScrollTop&&t>navbarHeight?el.addClass("header--hide"):t+e(window).height()<e(document).height()&&el.removeClass("header--hide"),lastScrollTop=t)}var n;lastScrollTop=0,delta=5,el=e("#header"),navbarHeight=el.outerHeight(),e(window).scroll(function(e){n=!0}),setInterval(function(){n&&(t(),n=!1)},100)}(jQuery);
+var App = (function($) {
+  'use strict';
+
+  function isHeightMore(height) {
+    if (document.documentElement.clientHeight > height) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  function isWidthLess(width) {
+    if (window.innerWidth < width) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  function isWidthMore(width) {
+    if (window.innerWidth > width) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  /* Windows Phone 8 viewport issue */
+  function ieViewport() {
+    if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+      var msViewportStyle = document.createElement('style');
+      msViewportStyle.appendChild(
+        document.createTextNode('@-ms-viewport{width:auto!important}'),
+      );
+      document.getElementsByTagName('head')[0].appendChild(msViewportStyle);
+    }
+  }
+
+  /* Navigation */
+  function menuHandler() {
+    var button = $('.menu'),
+      nav = $('.navigation'),
+      nav_outer = $('.navigation--outer');
+
+    button.on('click', function(e) {
+      e.preventDefault();
+      nav.toggleClass('js-active');
+      nav_outer.toggleClass('js-active');
+    });
+  }
+
+  function disableScrollOnNavigation() {
+    var nav = document.querySelector('.navigation');
+    nav.addEventListener(
+      'touchmove',
+      function(e) {
+        e.preventDefault();
+      },
+      false,
+    );
+  }
+
+  function closeMobileNav() {
+    var link = $('.navigation__item__anchor'),
+      nav = $('.navigation'),
+      nav_outer = $('.navigation--outer');
+
+    var rightWidth = isWidthLess(991);
+
+    if (rightWidth) {
+      link.on('click.menu', function(e) {
+        e.preventDefault();
+        nav.toggleClass('js-active');
+        nav_outer.toggleClass('js-active');
+
+        if (nav.hasClass('js-active') && nav_outer.hasClass('js-active')) {
+          nav.removeClass('js-active');
+          nav_outer.removeClass('js-active');
+        }
+      });
+    } else {
+      link.unbind('click.menu');
+    }
+  }
+
+  /* Slideshow */
+  function slideImg() {
+    var wideEnough = isWidthMore(848);
+
+    if (wideEnough) {
+      var counter = 0,
+        slides = $('.hero__img'),
+        j,
+        slideLength = slides.length - 1;
+
+      for (var i = 0, j = 10; i < slides.length; i++, j--) {
+        $(slides[i]).css('z-index', j);
+      }
+
+      window.setInterval(function() {
+        if (counter === 0) {
+          slides.eq(counter).fadeOut(3000);
+          counter++;
+        } else if (counter === slideLength) {
+          counter = 0;
+          slides.fadeIn(3000);
+        } else {
+          slides.eq(counter).fadeOut(3000);
+          counter++;
+        }
+      }, 6000);
+    }
+  }
+
+  /* Smoothscroll */
+  function smoothScroll() {
+    $('a[href*="#"]:not([href="#"])').click(function() {
+      if (
+        location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') &&
+        location.hostname === this.hostname
+      ) {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+        if (target.length) {
+          $('html,body').animate(
+            {
+              scrollTop: target.offset().top,
+            },
+            750,
+          );
+          return false;
+        }
+      }
+    });
+  }
+
+  /* Float labels */
+  function floatLabels() {
+    var input = $('.form__input'),
+      label = $('.form__label');
+
+    input.each(function() {
+      var that = $(this);
+
+      that.keyup(function() {
+        that.prev().addClass('typing');
+
+        if (that.val().length === 0) {
+          that.prev().removeClass('typing');
+        }
+      });
+    });
+  }
+
+  //AJAX calls
+  function myAjax() {
+    var link = $('.ajax-anchor');
+
+    link.on('click', function(e) {
+      e.preventDefault();
+
+      var pageUrl = $(this).attr('href'),
+        myContent = $('.content');
+
+      $.ajax({
+        url: pageUrl + '?rel=tab',
+        success: function(data) {
+          myContent.hide();
+          var response = $(data);
+          var content = response.filter('.content').html();
+          myContent.html(content).fadeIn(400);
+        },
+      });
+
+      if (pageUrl != window.location) {
+        window.history.pushState({path: pageUrl}, '', pageUrl);
+      }
+    });
+  }
+
+  return {
+    menuHandler: menuHandler,
+    closeMobileNav: closeMobileNav,
+    slideImg: slideImg,
+    smoothScroll: smoothScroll,
+    ieViewport: ieViewport,
+    floatLabels: floatLabels,
+    myAjax: myAjax,
+    disableScrollOnNavigation: disableScrollOnNavigation,
+  };
+})(jQuery);
+
+App.ieViewport();
+App.menuHandler();
+App.closeMobileNav();
+// App.slideImg();
+App.smoothScroll();
+App.floatLabels();
+App.myAjax();
+App.disableScrollOnNavigation();
+
+/* Hide Navigation on scroll */
+var HideNav = (function($) {
+  // Hide Header on on scroll down
+  var didScroll;
+  lastScrollTop = 0;
+  (delta = 5), (el = $('#header'));
+  navbarHeight = el.outerHeight();
+
+  $(window).scroll(function(event) {
+    didScroll = true;
+  });
+
+  setInterval(function() {
+    if (didScroll) {
+      hasScrolled();
+      didScroll = false;
+    }
+  }, 100);
+
+  function hasScrolled() {
+    var st = $(this).scrollTop();
+
+    // Make sure they scroll more than delta
+    if (Math.abs(lastScrollTop - st) <= delta) return;
+
+    // If they scrolled down and are past the navbar, add class .nav-up.
+    // This is necessary so you never see what is "behind" the navbar.
+    if (st > lastScrollTop && st > navbarHeight) {
+      // Scroll Down
+      el.addClass('header--hide');
+    } else {
+      // Scroll Up
+      if (st + $(window).height() < $(document).height()) {
+        el.removeClass('header--hide');
+      }
+    }
+
+    lastScrollTop = st;
+  }
+})(jQuery);
